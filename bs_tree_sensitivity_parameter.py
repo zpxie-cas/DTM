@@ -1,6 +1,4 @@
-# 不同特征向量的组合对模型准确率影响的敏感性试验
-# 涉及到rh的敏感性试验，因为只有部分站点有rh观测，所有没有rh观测的站点不参与
-# 所以需要另外的一个数据文件，用于存储没有rh观测的站点观测信息
+# This Pyhton script was used to test the sensitivity of DTM to the selected feature variables
 # Load libraries
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
