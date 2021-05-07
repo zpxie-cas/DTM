@@ -33,11 +33,7 @@ for i_file in files:
     count        = 0
     for i_sta in sta_name:
         print(i_file+" "+i_sta)
-        # load dataset
-       # pima = pd.read_csv("../datafile/"+i_sta+"_snowfall_rh.csv", header=0, names=col_names)
-        #pima = pd.read_csv("../datafile/"+i_sta+"_no_snowfall_rh.csv", header=0, names=col_names)
-        #pima = pd.read_csv("../datafile/"+i_sta+"_no_snowfall_no_snow_rh.csv", header=0, names=col_names)
-        #pima = pd.read_csv("../datafile/"+i_sta+"_no_snowfall_with_snow_rh.csv", header=0, names=col_names)
+
         if(count == 0):
             pima = pd.read_csv("../datafile/"+i_sta+i_file, header=0, names=col_names1)
         else:
@@ -66,12 +62,7 @@ for i_file in files:
             for i_count in range(0,20):                 
 
                 # Split dataset into training set and test set
-                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2) # 70% training and 30% test                    
-
-                # Create Decision Tree classifer object
-                #clf = DecisionTreeClassifier(max_depth=5)
-                #if(count < 5):
-                #print(X,y)
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)                  
                 clf = DecisionTreeClassifier(max_depth=len(feature_cols)+1)
                 #else:
                 #	clf = DecisionTreeClassifier(max_depth=5)         
